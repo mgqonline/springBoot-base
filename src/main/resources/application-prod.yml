@@ -1,0 +1,24 @@
+# 生产环境自定义配置
+# 与application.yml合并覆盖
+# spring配置
+spring:
+# datasource配置
+  datasource.system:
+    url: jdbc:mysql://localhost:3306/talkweb?useUnicode=true&characterEncoding=utf8&serverTimezone=UTC
+    username: talkweb
+    password: talkweb
+# redis配置
+  redis:
+    port: 6379
+    password: 1234
+# 日志配置
+logging:
+  level:
+    org:
+      mybatis: ERROR
+      springframework: ERROR
+    com:
+      atomikos: ERROR
+      talkedu: INFO
+    de.codecentric.boot.admin: ERROR
+  file: /home/webapp/logs/talkedu-card/runtime.log

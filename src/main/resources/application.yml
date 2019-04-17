@@ -1,0 +1,38 @@
+# server配置
+server:
+  port: 8989
+#  serlvet:
+#    context-path: /card
+# spring配置
+spring:
+  profiles:
+    active: dev # 切换环境
+  application:
+    name: talkedu-card
+ #datasource配置
+  datasource.system:
+    url: jdbc:mysql://127.0.0.1:3306/talkweb?useUnicode=true&characterEncoding=utf8
+    username: talkweb
+    password: talkweb
+    minPoolSize: 3
+    maxPoolSize: 25
+    maxLifetime: 1200
+    borrowConnectionTimeout: 30
+    loginTimeout: 30
+    maintenanceInterval: 60
+    maxIdleTime: 60
+    testQuery: select 1
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+# redis配置
+#  redis:
+#    port: 6379
+#    host: localhost
+#    database: 2
+#    pool:
+#      maxIdle: 8 # max idle connections in the pool
+#      minIdle: 0 # min idle connections in the pool
+#      maxActive: -1 # no limit to the number of active connections
+#      maxWait: 30000
+#    timeout: 15000 # time limit to get a connection - only applies if maxActive is finite
